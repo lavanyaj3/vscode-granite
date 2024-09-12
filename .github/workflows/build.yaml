@@ -44,12 +44,11 @@ jobs:
           npm install -g @vscode/vsce
           vsce package
 
-      # Upload the generated .vsix as an artifact
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: extension-vsix-${{ github.run_id }}
-          path: "*.vsix"
+          name: vscode-granite-vsix-${{ github.run_id }}  # Use a unique name based on the GitHub run ID
+          path: vscode-granite/*.vsix
 
       # Run tests
       - name: Run Test
