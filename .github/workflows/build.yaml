@@ -48,7 +48,7 @@ jobs:
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: extension-vsix
+          name: extension-vsix-${{ github.run_id }}
           path: "*.vsix"
 
       # Run tests
