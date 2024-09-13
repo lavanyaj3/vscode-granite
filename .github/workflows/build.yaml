@@ -47,7 +47,7 @@ jobs:
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vscode-granite-vsix-${{ github.run_id }}  # Use a unique name based on the GitHub run ID
+          name: vscode-granite-vsix-${{ runner.os }}-${{ github.run_id }}  # Unique name with OS and run ID
           path: "./vscode-granite-*.vsix"
 
       # Run tests
